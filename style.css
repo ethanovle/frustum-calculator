@@ -1,12 +1,61 @@
+html {
+	 font-family: Sans-Serif;
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body {
+   margin: 0px;
+   min-height: 100%;
+   width: 100%;
+}
+
 table {
   border: 1px solid black;
   border-collapse: collapse;
 }
 
 th, td {
+	text-align: center;
 	padding: 5px;
 }
 
-th, .btn{
+.input-output {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+	flex-wrap: wrap;
+}
+
+.input {
+	height: 205px;
+	width: 200px;
+}
+
+.input td {
+	font-size: 13px;
+}
+
+.input.btn{
 	text-align: center;
+}
+
+
+.output {
+	height: 205px;
+	width: 200px;
+}
+
+.output td {
+	font-size: 13px;
+}
+
+#explanation {
+	font-size: 10px;
+	text-align: right;
+	padding: 0.5px;
 }
