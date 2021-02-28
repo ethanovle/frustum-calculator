@@ -3,78 +3,83 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Frustum Calculator</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-  
   <body>
-  	
-  	<table> <!-- Get user input -->
-  		
-  		<tr>
-  			<th colspan="2">Inputs</th>
-  		</tr>
-  		
-  		<tr>
-  			<td>D1</td>
-  			<td>
-  				<input type="number" id="d1" name="d1" required>
-  			</td>
-  		</tr>
-  		
-  		<tr>
-  			<td>D2</td>
-  			<td>
-  				<input type="number" id="d2" name="d2" required>
-  			</td>
-  		</tr>
-  		
-  		<tr>
-  			<td>
-  				<input type="radio" id="h" name="input-options" value="h" required>
-  				<label for="h">h</label>
-  				<input type="radio" id="L" name="input-options" value="L">
-  				<label for="L">L</label>
-  			</td>
-  			<td>
-  				<input type="number" id="hl" name="hl" required>
-  			</td>
-  		</tr>
-  		
-  		<tr> <!-- Calculate Frustrum -->
-  			<td colspan="2" class="btn">
-  				<button class="btn calculate">Calculate</button>
-  			</td>
-  		</tr>
-  		
-  	</table>
-  	<a href="explanation.html" class="explanations">What are these values?</a>
-  	<br>
-  	<br>
-  	
-  	<table class="output"> <!-- Outputs -->
-  		
-  		<tr>
-  			<th colspan="2">Outputs</th>
-  		</tr>
-  		
-  		<tr>
-  			<td>r1</td>
-  			<td id="r1"></td>
-  		</tr>
-  		
-  		<tr>
-  			<td>r2</td>
-  			<td id="r2"></td>
-  		</tr>
-  		
-  		<tr>
-  			<td>θ</td>
-  			<td id="angle"></td>
-  		</tr>
-  		
-  	</table>
-  	
-    <script src="script.js"></script>
+  	<div class="input-output">
+  		<div class="input">
+  			<table class="input table"> <!-- Get user input -->
+  				<tr>
+  					<th colspan="2">Inputs</th>
+  				</tr>
+  				<tr>
+  					<td>D1</td>
+  					<td>
+  						<input type="number" id="d1" name="d1" 	placeholder="Enter D1 value" required>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td>D2</td>
+  					<td>
+  						<input type="number" id="d2" name="d2" placeholder="Enter D2 value" required>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td>
+  						<input type="radio" id="h" name="input-options" 		value	="h" required>
+  						<label for="h">h</label>
+  						<input type="radio" id="L" name="input-options" value="L">
+  						<label for="L">L</label>
+  					</td>
+  					<td>
+  						<input type="number" id="hl" name="hl" 	placeholder="Enter h/L value" required>
+  					</td>
+  				</tr>
+  				<tr> <!-- Calculate Frustrum -->
+  					<td colspan="2" class="btn">
+  					<button class="btn calculate">Calculate</button>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td id="explanation" colspan="2">
+  						<a href="explanation.html">What are these values?</a>
+  					</td>
+  				</tr>
+  			</table>
+  			<div class="input-visual"> <!-- Input Visualization -->
+  				<p>
+  					<!-- Visual Input Elements Here -->
+  				</p>
+  			</div>
+	  	</div>
+  		<div class="output">
+  			<table class="output table"> <!-- Outputs -->
+  				<tr>
+  					<th colspan="2">Outputs</th>
+  				</tr>
+  				<tr>
+  					<td>r1</td>
+  					<td id="r1"></td>
+  				</tr>
+  				<tr>
+  					<td>r2</td>
+  					<td id="r2"></td>
+  				</tr>
+  				<tr>
+  					<td>θ</td>
+  					<td id="angle"></td>
+  				</tr>
+  			</table>
+  			<div class="output-visual"> <!-- Output Visualization -->
+  				<p>
+  					<!-- Visual Output Elements Here -->
+  				</p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="scripts">
+  		<script src="script.js"></script>
+  	</div>
   </body>
 </html>
