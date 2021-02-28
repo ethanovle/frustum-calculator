@@ -1,25 +1,36 @@
+//Button	
 const btn = document.querySelector(".calculate");
 
+//Functions
+function nPowerOf(input, n) {
+	var num = input;
+	for (let i = 1; i < n; i++) {
+		num *= input
+	}
+	return num;
+}
+
+//Event Handler
 btn.addEventListener("click", () => {
 	
-	//Get required elements
+	//Input Elements
 	var h;
 	var d1 = document.querySelector("#d1");
 	var d2 = document.querySelector("#d2");
 	var h = document.querySelector("#hl");
 	var hlRadios = document.getElementsByName("input-options");
 	
-	//output elements
+	//Output Elements
 	var r1Output = document.querySelector("#r1");
 	var r2Output = document.querySelector("#r2");
 	var angleOutput = document.querySelector("#angle");
-	
-	//Get all inputs
+
+	//Get Inputs
 	d1 = d1.value;
 	d2 = d2.value;
 	h = h.value;
 
-	//Calculating Output
+	//Output Variables
 	var r1;
 	var r2;
 	var fullCirc;
@@ -27,12 +38,10 @@ btn.addEventListener("click", () => {
 	const halfD1 = d1/2;
 	const halfD2 = d2/2;
 	const aSide = halfD2-halfD1;
-	const aSide_squared = aSide * aSide;
 	
 	// Define h
 	if (hlRadios[1].checked) {
-		h = Math.sqrt((h * h) + aSide_squared);
-		console.log(h)
+		h = Math.sqrt((h * h) + nPowerOf(aSide, 2));
 	}
 	
 	//Calculate
@@ -42,32 +51,13 @@ btn.addEventListener("click", () => {
 	frustumCirc = Math.PI * d2;
 	angle = (frustumCirc / fullCirc) * 360;
 	
-	console.log(fullCirc)
-	console.log(frustumCirc)
-	
 	//Outputs
 	r1Output.innerHTML = r1;
 	r2Output.innerHTML = r2;
 	angleOutput.innerHTML = angle;
 	
+	//Input Visualization (Coming soon) 
+	
+	//Output Visualization (Coming Soon)
+	
 });
-
-
-/*
-Inputs
-d1
-d2
-L/h
-
-Outputs:
-solve h = sqrt( (L^2) + ((d2/2)-(d1/2)) )
-solve L = sqrt( (h^2) - ((d2/2)-(d1/2)) )
-r1 = r2-h
-r2 = ((d2/d1)*h)*2
-angle = (frustumCirc/fullCirc)*360
-
-vars
-fullCirc = 2 * pi * (d2/2)
-frustumCirc = pi * d2
-
-*/
